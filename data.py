@@ -108,6 +108,8 @@ class PDFfile:
         for apo in apos:
             if apo.open(Datum):
                 l.append(apo)
+        if 0 == len(l):
+            return #skip past days
         offsetW = (self.rowH() - self.fontSize*8)/2*self.tableW/self.rowH()
         offsetH =-(self.rowH() - self.fontSize*8)/2-self.fontSize*0.8 - 4*mm
         if len(l)>=1 and l[0].name == "Charlotten-Apotheke Stuttgart":
